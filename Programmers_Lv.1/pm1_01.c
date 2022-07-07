@@ -1,18 +1,19 @@
-#include <stdio.h>
+#include <stdio.h> //Header file
 
-int main(void) {
-    int n;
-    int m;
-    scanf("%d %d", &n, &m);
+int main(void) { // miain function
+    int n; // number of arguments
+    int m; // number of arguments
+
+    scanf("%d %d", &n, &m); //receive value
     
-    for(int i = 0; i < m; i++)
+    for(int i = 0; i < m; i++) //repeat as many as i
     {
-        for(int k = 0; k < n; k++)
+        for(int k = 0; k < n; k++) //repeat as many as k
         {
-            printf("*");
+            printf("*"); //print "*"
         }
-        printf("\n");
+        printf("\n"); //enter
     }
     
-    return 0;
+    return 0; //return value
 }
