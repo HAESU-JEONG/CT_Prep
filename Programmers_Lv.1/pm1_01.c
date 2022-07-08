@@ -6,9 +6,9 @@ int main(void) { // miain function
 
     scanf("%d %d", &n, &m); //receive value
     
-    for(int i = 0; i < m; i++) //repeat as many as i
+    for(int i = 0; i < m; i++) //repeat until i
     {
-        for(int k = 0; k < n; k++) //repeat as many as k
+        for(int k = 0; k < n; k++) //repeat until k
         {
             printf("*"); //print "*"
         }
