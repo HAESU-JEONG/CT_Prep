@@ -3,7 +3,7 @@ def solution(n): # solution defined
     n = str(n) # Replace numbers with strings
     
     for i in (n): # repeat until n
-        answer += int(i) # answer = answer + ini(i)
+        answer += int(i) # answer = answer + int(i)
     
     return answer # return answer
 
