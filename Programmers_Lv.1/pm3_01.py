@@ -9,3 +9,6 @@ def solution(s): # solution function defined
                 answer += i[j].lower() # replace lowercase letters
         answer += ' ' # add spaces
     return answer[:-1] # slice end spaces
+
+s = int(input()) # input number
+print(solution(s)) # print solution(s)
