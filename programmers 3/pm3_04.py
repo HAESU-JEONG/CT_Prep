@@ -1,7 +1,7 @@
 def solution(num):
     answer = ''
 
-    for i in range(1, num+1):
+    for i in range(num):
         if (i % 2) == 0: 
             answer += '박'
         else:
