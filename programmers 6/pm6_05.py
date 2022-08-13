@@ -3,10 +3,9 @@ def solution(ori):
     number_s = ['zero','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
     
     for i in range(len(number)):
-        if ori.find('number_s[i]'):
-            ori.strip('number_s[i]')
-            
-    return ori
+        if ori.find(number_s[i]) != -1:
+            ori = ori.replace(number_s[i], number[i])
+    return int(ori)
 
 ori = input()
-print(solution(ori))
+print(solution(ori)) 
