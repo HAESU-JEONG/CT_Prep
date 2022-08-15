@@ -1,22 +1,25 @@
-
 def solution(lottos, win_nums):
     answer = []
-    max, min = 0, 0
-    zero = 0
-    
-    for i in range(6):
-        if lottos.find(win_nums[i]) != -1:
-            min += 1
+    same = len(set(lottos) & set(win_nums)) #intersection of lottos and win_nums
+    zero = lottos.count(0) # 0 of lottos
 
-    for i in range(1, 7):
-        if lottos.find(0) != -1:
-            max += 1
-        max += min
+    for i in range(1, 7): 
+        if (same+zero) == 0: #same+zero = maximum
+            answer.append(6)
+            break
+        
+        elif (same+zero) == i :
+            answer.append(7-i)
 
-    for i in range(1, 7):
-        if min == i :
-            answer.append(6-i)
-    print(answer)
+    for i in range(1, 7):    
+        if same == 0 : #minimum
+            answer.append(6)
+            break
+
+        elif same == i :
+            answer.append(7-i)
+            
+    return(answer)
 
 lottos = [44, 1, 0, 0, 31, 25]
 win_nums = [31, 10, 45, 1, 6, 19]
