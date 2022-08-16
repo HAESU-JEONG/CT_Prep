@@ -9,8 +9,10 @@ def solution(id_list, report, k):
     stop_id=[]
     reported_people = []
     dic_id = {}
-    report = list(set(report)) #중복 제거 = 한 사람이 같은 사람을 여러번 신고한 경우 제거
-    #print(report)
+    tmp = 0
+
+    #중복 제거 = 한 사람이 같은 사람을 여러번 신고한 경우 제거
+    report = list(set(report)) 
 
     #id 딕셔너리에 저장 후 value값으로 리스트 설정
     for i in id_list:
@@ -30,15 +32,15 @@ def solution(id_list, report, k):
         if int(dic_report.get(i)) >= k:
             stop_id.append(i)
         
-    for i in stop_id:
-        if i in dic_report.values():
-            tmp += 1
-            print(tmp)
-
-
-    #print(dic_id)
-    #print(dic_report)
-    #print(stop_id)
-
+    #stop_id가 dic_id의 value값에 있다면 tmp를 하나 늘려 본인이 신고넣은 사람 중 몇명이 차단먹었는지 통보 가능하게    
+    for i in dic_id.values():
+        for j in stop_id:
+            if j in i:
+                tmp += 1
+        answer.append(tmp)
+        tmp = 0
+    
+    return(answer)
+    #print(answer)
     
 solution(id_list, report, k)
