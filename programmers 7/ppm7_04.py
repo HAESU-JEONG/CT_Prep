@@ -2,17 +2,21 @@ def solution(number, k):
     stack = []
 
     for i in number:
-        while stack and stack[-1] < i and k > 0:
-            stack.pop()
-            k -= 1
-        stack.append(i)
-        k -= 1
-    
+        if k > 0 :
+            while stack and stack[-1] < i :
+                stack.pop()
+                k+=1
 
-    
+        else : 
+            break
+        
+        stack.append(i)
+        k-=1
+        
     return ''.join(stack)
         
-
+number = "4321"
+k = "1"
             
 
 
