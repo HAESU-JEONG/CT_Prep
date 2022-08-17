@@ -12,4 +12,4 @@ def solution(number, k) :
 
 number = "4177252841"
 k = 2
-print(solution(number, k), type(solution(number, k)))
+print(solution(number, k))
