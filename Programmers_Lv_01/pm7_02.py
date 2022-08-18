@@ -16,10 +16,10 @@ def solution(id_list, report, k):
         reports[reported_person] += 1 # add 1 to the value with 'reported_person' as an index
 
     for record in report:
-        reported_person = record.split()[1]
+        report_person, reported_person = record.split()
         if reports[reported_person] >= k: # if the value is greater than the 'k'
-            answer[id_list.index(reported_person)] += 1
-            # id_list.index(reported_person) => find index reported_person in id_list
+            answer[id_list.index(report_person)] += 1
+            # id_list.index(report_person) => find index report_person in id_list
             # add 1 to the answer's value 
     
     return answer
