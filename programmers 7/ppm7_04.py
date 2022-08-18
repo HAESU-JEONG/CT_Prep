@@ -1,31 +1,13 @@
 def solution(number, k):
-    stack = []
+    stack = [number[0]] #input firtst number to stack 
 
-    for i in number:
-        if k > 0 :
-            while stack and stack[-1] < i :
-                stack.pop()
-                k+=1
+    for num in number[1:]: #start numner[1], repeat
+        while stack and stack[-1] < num and k > 0:  #previous number is smaller than next num and k is bigger than 0
+            k -= 1 # take one out of k
+            stack.pop() #pop() 
+        stack.append(num) #append()
 
-        else : 
-            break
-        
-        stack.append(i)
-        k-=1
-        
-    return ''.join(stack)
-        
-number = "4321"
-k = "1"
-            
+    if k != 0: #if k isn't 0
+        stack = stack[:-k]  #stack
 
-
-
-    
-
-
-
-
-number = "4177252841"
-k = 2
-print(solution(number, k))
+    return ''.join(stack) 
