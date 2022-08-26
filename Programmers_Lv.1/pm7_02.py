@@ -22,5 +22,5 @@ def solution(id_list, report, k):
     
     for i in range(len(id_list)):
         answer.append(good_list.count(id_list[i]))
-        
+
     return answer
